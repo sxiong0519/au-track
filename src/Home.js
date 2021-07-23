@@ -1,7 +1,14 @@
 import React from "react";
+import { ChildList } from "./components/children/ChildList"
+import { ChildProvider } from "./components/children/ChildProvider"
+import { Route } from "react-router";
 
 export const Home = () => (
     <>
-    This is home... 
+        <ChildProvider>
+            <Route>
+                <ChildList />
+            </Route>
+        </ChildProvider>
     </>
 )

@@ -1,7 +1,10 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-around;
+    background-color: red;
+    padding: 10px;
+    font-size: 2em;
 }
 
 .navbar__item {

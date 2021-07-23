@@ -1,0 +1,12 @@
+.child_image {
+    border-radius: 25%;
+    height: 13em;
+    width: 13em;
+}
+
+.children {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
