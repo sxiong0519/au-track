@@ -1,7 +1,11 @@
+/* .childimg {
+    height: auto;
+    width: 15em;
+} */
 .child_image {
-    border-radius: 25%;
-    height: 13em;
-    width: 13em;
+    border-radius: 40%;
+    height: auto;
+    width: 15em;
 }
 
 .children {

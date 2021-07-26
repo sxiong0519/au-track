@@ -9,8 +9,10 @@ export const ChildCard = ({ child }) => {
         <>
             <section className="child_card">
                 <div className="child"><h3>{child.name}</h3>
-                    <Link to={"/"}><img src={child.image} alt="" className="child_image" />
-                    </Link>
+                    <div className="childimg">
+                        <Link to={`/children/detail/${child.id}`}><img src={child.image} alt="" className="child_image" />
+                        </Link>
+                    </div>    
                 </div>
             </section>
         </>
