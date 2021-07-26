@@ -4,7 +4,6 @@ import { ApplicationViews } from "./ApplicationViews";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import "./AuTrack.css";
-import { NavHome } from "./components/nav/NavHome";
 
 export const AuTrack = () => (
   <>
@@ -13,7 +12,6 @@ export const AuTrack = () => (
         if (localStorage.getItem("autrack_user")) {
           return (
             <>
-              <NavHome />
               <ApplicationViews />
             </>
           );
