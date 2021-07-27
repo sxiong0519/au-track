@@ -25,8 +25,9 @@ export const ProviderList = () => {
 
     return (
         <>
-        
         <div className="providers">
+          <h2>Providers</h2>
+        <div className="providers_list">
         {console.log("ProviderList: Render", providers)}
           {
              providers.map(provider => {
@@ -34,7 +35,7 @@ export const ProviderList = () => {
               return <ProviderCard key={provider.id} provider={provider} />}
             })
           }
-          
+          </div>
         </div>
         </>
     )

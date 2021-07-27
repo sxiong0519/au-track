@@ -4,6 +4,7 @@ import { ProviderList } from "../care/ProviderList";
 import { ProviderContext, ProviderProvider} from "../care/ProviderProvider";
 import { MilestoneCard } from "../milestones/MilestoneCard";
 import { MilestoneList } from "../milestones/MilestoneList";
+import { MilestoneListPreview } from "../milestones/MilestoneListPreview";
 import { MilestoneContext, MilestoneProvider } from "../milestones/MilestoneProvider";
 import { ChildContext } from "./ChildProvider";
 
@@ -41,7 +42,9 @@ export const ChildDetail = () => {
         <img className="detailimg" src={child.image} /><h3>{child.name}</h3>
         </div>
         <div className="childdetail_milestone">
-            {milestoneChild ? <><MilestoneProvider><MilestoneList /></MilestoneProvider></> : "false"}
+            {milestoneChild ? <><MilestoneProvider>
+                <MilestoneList />
+                </MilestoneProvider></> : "false"}
             <div className="detail_link">
             <Link to={`/milestones/list/${child.id}`}>View All Milestones</Link>
             </div>
