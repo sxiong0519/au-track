@@ -8,7 +8,10 @@ import { MilestoneList } from "./components/milestones/MilestoneList"
 import { MilestoneProvider } from "./components/milestones/MilestoneProvider"
 import { NavChild } from "./components/nav/NavChild"
 import { NavHome } from "./components/nav/NavHome"
+import { TipList } from "./components/tips/TipList"
+import { TipProvider } from "./components/tips/TipProvider"
 import { Home } from "./Home"
+
 
 
 
@@ -39,6 +42,12 @@ export const ApplicationViews = () => {
                 </Route>
                 </ProviderProvider>
             </ChildProvider>
+            <TipProvider>
+                <Route exact path="/tips">
+                    <NavHome/>
+                    <TipList />
+                </Route>
+            </TipProvider>
             
         </>
     )
