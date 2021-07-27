@@ -13,9 +13,14 @@ export const ChildProvider = (props) => {
         .then(setChildren)
     }
 
+    const getChildById = (id) => {
+        return fetch (`http://localhost:8088/children/${id}`)
+        .then(res => res.json())
+    }
+
 
     return (
-        <ChildContext.Provider value={{children, getChildren}}>
+        <ChildContext.Provider value={{children, getChildren, getChildById}}>
             {props.children}
         </ChildContext.Provider>
     )

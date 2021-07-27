@@ -10,11 +10,11 @@ export const NavChild = (props) => {
             </li>
             
             <li className="navbar__item">
-                <Link className="navbar__link" to="/tips">Milestones </Link>
+                <Link className="navbar__link" to="/milestones">Milestones </Link>
             </li>
             
             <li className="navbar__item">
-                <Link className="navbar__link" to="/locations">Care</Link>
+                <Link className="navbar__link" to="/providers">Provider</Link>
             </li>
         </ul>
     )

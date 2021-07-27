@@ -1,5 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { ProviderList } from "./components/care/ProviderList"
+import { ProviderProvider } from "./components/care/ProviderProvider"
 import { ChildDetail } from "./components/children/ChildDetail"
 import { ChildProvider } from "./components/children/ChildProvider"
 import { MilestoneList } from "./components/milestones/MilestoneList"
@@ -23,10 +25,15 @@ export const ApplicationViews = () => {
                     <NavChild />
                     <ChildDetail />
                 </Route>
-                <Route exact path="/milestones">
+                <Route exact path="/milestones/list/:childId(/d+)">
                     <MilestoneList />
                 </Route>
                 </MilestoneProvider>
+                <ProviderProvider>
+                <Route exact path="/providers">    
+                    <ProviderList />
+                </Route>
+                </ProviderProvider>
             </ChildProvider>
             
         </>
