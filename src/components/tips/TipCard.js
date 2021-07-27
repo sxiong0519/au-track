@@ -10,6 +10,8 @@ export const TipCard = ({ tip }) => {
             <div className="tip_card">
             <h2>{tip.title}</h2>
             {tip.description}
+            <br/>
+            Posted by: {tip.parent.name}
             </div>
         </>
 )}

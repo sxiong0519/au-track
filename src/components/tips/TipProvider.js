@@ -8,7 +8,7 @@ export const TipProvider = (props) => {
 
 
     const getTips = () => {
-        return fetch("http://localhost:8088/tips")
+        return fetch("http://localhost:8088/tips?_expand=parent")
         .then(res => res.json())
         .then(setTips)
     }
