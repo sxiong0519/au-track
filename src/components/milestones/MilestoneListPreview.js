@@ -4,7 +4,7 @@ import { MilestoneContext } from "./MilestoneProvider";
 import { MilestoneCard } from "./MilestoneCard";
 import { ChildContext } from "../children/ChildProvider";
 
-export const MilestoneList = () => {
+export const MilestoneListPreview = () => {
 
     const { milestones, getMilestones } = useContext(MilestoneContext)
     const {children, getChildById} = useContext(ChildContext)
