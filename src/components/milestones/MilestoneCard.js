@@ -7,9 +7,13 @@ export const MilestoneCard = ({ milestone }) => {
     
     return (
         <>
-            <section className="milestone_card">
-                {milestone.milestone}
-            </section>
+            <div className="milestone_card">
+                <ul>
+                <li>{milestone.milestone}</li>
+                <li>{milestone.date}</li>
+                <li>{milestone.description}</li>
+                </ul>
+            </div>
         </>
 )}
 
