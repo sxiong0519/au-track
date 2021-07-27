@@ -17,6 +17,7 @@ export const ApplicationViews = () => {
         <>
             <ChildProvider>
                 <MilestoneProvider>
+                <ProviderProvider>
                 <Route exact path="/">
                     <NavHome />
                     <Home />
@@ -25,12 +26,13 @@ export const ApplicationViews = () => {
                     <NavChild />
                     <ChildDetail />
                 </Route>
-                <Route exact path="/milestones/list/:childId(/d+)">
+                <Route exact path="/milestones/list/:childId(\d+)">
                     <MilestoneList />
                 </Route>
+                </ProviderProvider>
                 </MilestoneProvider>
                 <ProviderProvider>
-                <Route exact path="/providers">    
+                <Route exact path="/providers/list/:childId(\d+)">    
                     <ProviderList />
                 </Route>
                 </ProviderProvider>

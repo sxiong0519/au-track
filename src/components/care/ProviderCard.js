@@ -8,7 +8,11 @@ export const ProviderCard = ({ provider }) => {
     return (
         <>
             <section className="provider_card">
-                {provider.name}
+                <ul>
+                    <li>{provider.name}</li>
+                    <li>{provider.specialty}</li>
+                    <li>{provider.description}</li>
+                </ul>
             </section>
         </>
 )}
