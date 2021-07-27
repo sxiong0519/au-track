@@ -11,6 +11,7 @@ import { MilestoneProvider } from "./components/milestones/MilestoneProvider"
 import { NavChild } from "./components/nav/NavChild"
 import { NavHome } from "./components/nav/NavHome"
 import { ParentProvider } from "./components/parents/ParentProvider"
+import { TipForm } from "./components/tips/TipForm"
 import { TipList } from "./components/tips/TipList"
 import { TipProvider } from "./components/tips/TipProvider"
 import { Home } from "./Home"
@@ -47,6 +48,9 @@ export const ApplicationViews = () => {
             </ChildProvider>
             <ParentProvider>
             <TipProvider>
+                <Route path="/tips/create">
+                    <TipForm/>
+                </Route>
                 <Route exact path="/tips">
                     <NavHome/>
                     <TipList />
