@@ -16,7 +16,7 @@ export const ChildList = () => {
 
     return (
         <>
-        <div className="newtipbtn"><button className="btns" onClick={() => 
+        <div className="newchildbtn"><button className="btns" onClick={() => 
             {history.push("/children/create")}}>
 			Add Child</button></div>
         <div className="children">
