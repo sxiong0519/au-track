@@ -8,6 +8,7 @@ import { ChildProvider } from "./components/children/ChildProvider"
 import { LocationForm } from "./components/locations/LocationForm"
 import { LocationList } from "./components/locations/LocationList"
 import { LocationProvider } from "./components/locations/LocationProvider"
+import { MilestoneForm } from "./components/milestones/MilestoneForm"
 import { MilestoneList } from "./components/milestones/MilestoneList"
 import { MilestoneProvider } from "./components/milestones/MilestoneProvider"
 import { NavChild } from "./components/nav/NavChild"
@@ -44,6 +45,16 @@ export const ApplicationViews = () => {
                 <Route exact path="/milestones/list/:childId(\d+)">
                     <NavChild />
                     <MilestoneList />
+                </Route>
+                <Route exact path="/milestones/list">
+                    <NavChild />
+                    <MilestoneList />
+                </Route>
+                <Route exact path="/milestone/create">
+                    <MilestoneForm/>
+                </Route>
+                <Route path="/milestones/edit/:milestoneId(\d+)">
+                    <MilestoneForm/>
                 </Route>
                 </ProviderProvider>
                 </MilestoneProvider>

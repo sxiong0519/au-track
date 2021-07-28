@@ -14,8 +14,6 @@ export const MilestoneList = () => {
 
     
     const { childId } = useParams();
-    
-    let foundChild = milestones.filter(c => c.childId === child.id)
 
     useEffect(() => {
         console.log("useEffect", childId)
@@ -28,19 +26,21 @@ export const MilestoneList = () => {
 
     return (
         <>
-        
-        <div className="milestones">
-        <h2>Milestones</h2>
-        <div className="milestones_list">
-        {console.log("MilestoneList: Render", milestones)}
-          {
-             milestones.map(milestone => {
-                 if(milestone.childId === child.id){
-              return <MilestoneCard key={milestone.id} milestone={milestone} />}
-            })
-          }
-          </div>
-        </div>
+            <div className="newmilestonebtn"><button className="btns" onClick={() => 
+                {history.push("/milestone/create")}}>
+                Add Milestone</button></div>
+            <div className="milestones">
+            <h2>Milestones</h2>
+            <div className="milestones_list">
+            {console.log("MilestoneList: Render", milestones)}
+            {
+                milestones.map(milestone => {
+                    if(milestone.childId === child.id){
+                return <MilestoneCard key={milestone.id} milestone={milestone} />}
+                })
+            }
+            </div>
+            </div>
         </>
     )
 
