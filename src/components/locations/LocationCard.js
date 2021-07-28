@@ -21,7 +21,8 @@ export const LocationCard = ({ location }) => {
             <br/>
             Posted by: {location.parent.name}
             </div>
-            {location.parentId === parseInt(localStorage.getItem("autrack_user")) ? <section className="buttons">
+            {location.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
+            <section className="buttons">
 			<button className="btns" onClick={locationDelete}>Delete</button>
             <button className="btns" onClick={() => {
                 history.push(`/locations/edit/${location.id}`)

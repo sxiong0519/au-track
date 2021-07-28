@@ -6,7 +6,7 @@ import { TipContext } from "./TipProvider";
 
 
 export const TipForm = () => {
-  const { addTips, getTipById } = useContext(TipContext)
+  const { addTips, getTipById, updateTip } = useContext(TipContext)
   
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,11 +34,19 @@ export const TipForm = () => {
   const handleClickSaveTip = () => {
     if (tip.title === undefined || tip.description === undefined) {
         window.alert("Please complete the form")
+    } else if (tipId) {
+        updateTip({
+            id: tip.id, 
+            title: tip.title,
+            description: tip.description,
+            parentId: parseInt(localStorage.getItem("autrack_user"))
+        })
+        .then(() => history.push("/tips"))
     } else {
         const newTip = {
           title: tip.title,
           description: tip.description,
-          parentId: parseInt(localStorage.getItem("autrack_user")),
+          parentId: parseInt(localStorage.getItem("autrack_user"))
       }
       addTips(newTip)
         .then(() => history.push("/tips"))

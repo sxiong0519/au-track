@@ -29,9 +29,26 @@ export const TipProvider = (props) => {
         .then(res => res.json()) // note we don't set anything on state here. Why?
     }
 
+    const deleteTip = (id) => {
+		return fetch(`http://localhost:8088/tips/${id}`,
+		{method: "DELETE"})
+		.then(getTips)
+	}
+
+	const updateTip = tip => {
+		return fetch(`http://localhost:8088/tips/${tip.id}`, {
+			method:"PUT",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(tip)
+		})
+		.then(getTips)
+	}
+
 
     return (
-        <TipContext.Provider value={{tips, getTips, addTips, getTipById}}>
+        <TipContext.Provider value={{tips, getTips, addTips, getTipById, deleteTip, updateTip}}>
             {props.children}
         </TipContext.Provider>
     )
