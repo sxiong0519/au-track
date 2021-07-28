@@ -4,6 +4,8 @@ import { ApplicationViews } from "./ApplicationViews";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import "./AuTrack.css";
+import { ChildProvider } from "./components/children/ChildProvider";
+
 
 export const AuTrack = () => (
   <>
@@ -12,7 +14,9 @@ export const AuTrack = () => (
         if (localStorage.getItem("autrack_user")) {
           return (
             <>
+            <ChildProvider>
               <ApplicationViews />
+              </ChildProvider>
             </>
           );
         } else {
