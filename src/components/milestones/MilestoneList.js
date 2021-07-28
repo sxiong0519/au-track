@@ -25,8 +25,6 @@ export const MilestoneList = () => {
             setChild(response)
         })
     }, [])
-    console.log("filter" , foundChild)
-    console.log("child" , child)
 
     return (
         <>
