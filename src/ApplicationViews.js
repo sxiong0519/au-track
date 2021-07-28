@@ -4,6 +4,7 @@ import { ProviderList } from "./components/care/ProviderList"
 import { ProviderProvider } from "./components/care/ProviderProvider"
 import { ChildDetail } from "./components/children/ChildDetail"
 import { ChildProvider } from "./components/children/ChildProvider"
+import { LocationForm } from "./components/locations/LocationForm"
 import { LocationList } from "./components/locations/LocationList"
 import { LocationProvider } from "./components/locations/LocationProvider"
 import { MilestoneList } from "./components/milestones/MilestoneList"
@@ -48,6 +49,9 @@ export const ApplicationViews = () => {
             </ChildProvider>
             <ParentProvider>
             <TipProvider>
+            <Route path="/tips/edit/:tipId(\d+)">
+                    <TipForm/>
+                </Route>
                 <Route path="/tips/create">
                     <TipForm/>
                 </Route>
@@ -57,6 +61,12 @@ export const ApplicationViews = () => {
                 </Route>
             </TipProvider>
             <LocationProvider>
+            <Route path="/locations/edit/:locationId(\d+)">
+                    <LocationForm/>
+                </Route>
+                <Route path="/locations/create">
+                    <LocationForm/>
+                </Route>
                 <Route exact path="/locations">
                     <NavHome />
                     <LocationList />    
