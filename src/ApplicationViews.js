@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { ProviderList } from "./components/care/ProviderList"
 import { ProviderProvider } from "./components/care/ProviderProvider"
 import { ChildDetail } from "./components/children/ChildDetail"
+import { ChildForm } from "./components/children/ChildForm"
 import { ChildProvider } from "./components/children/ChildProvider"
 import { LocationForm } from "./components/locations/LocationForm"
 import { LocationList } from "./components/locations/LocationList"
@@ -29,6 +30,12 @@ export const ApplicationViews = () => {
                 <Route exact path="/">
                     <NavHome />
                     <Home />
+                </Route>
+                <Route path ="/children/edit/:childId(\d+)">
+                    <ChildForm/>
+                </Route>
+                <Route path="/children/create">
+                    <ChildForm/>
                 </Route>
                 <Route exact path="/children/detail/:childId(\d+)">
                     <NavChild />

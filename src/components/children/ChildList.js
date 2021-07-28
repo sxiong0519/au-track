@@ -16,11 +16,14 @@ export const ChildList = () => {
 
     return (
         <>
-        
+        <div className="newtipbtn"><button className="btns" onClick={() => 
+            {history.push("/children/create")}}>
+			Add Child</button></div>
         <div className="children">
           {
              children.map(child => {
-              return <ChildCard key={child.id} child={child} />
+                 if (child.parentId === parseInt(localStorage.getItem("autrack_user"))) {
+                    return <ChildCard key={child.id} child={child} />}
             })
           }
         </div>
