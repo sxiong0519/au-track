@@ -25,7 +25,7 @@ export const TipProvider = (props) => {
     }
 
     const getTipById = (id) => {
-        return fetch(`http://localhost:8088/tips/${id}?_embed=parents`)
+        return fetch(`http://localhost:8088/tips/${id}?_expand=parent`)
         .then(res => res.json()) // note we don't set anything on state here. Why?
     }
 

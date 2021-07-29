@@ -35,7 +35,7 @@ export const MilestoneList = () => {
             {console.log("MilestoneList: Render", milestones)}
             {
                 milestones.map(milestone => {
-                    if(milestone.childId === child.id){
+                    if(milestone.childId === parseInt(childId)){
                 return <MilestoneCard key={milestone.id} milestone={milestone} />}
                 })
             }
