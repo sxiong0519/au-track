@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ProviderList } from "../care/ProviderList";
+import { ProviderListPreview } from "../care/ProviderListPreview";
 import { ProviderContext, ProviderProvider} from "../care/ProviderProvider";
 import { MilestoneCard } from "../milestones/MilestoneCard";
 import { MilestoneList } from "../milestones/MilestoneList";
@@ -38,20 +39,17 @@ export const ChildDetail = () => {
     return (
         <>
         <div className="childdetail">
-        <div className="detailheader">
-        <img className="detailimg" src={child.image} /><h3>{child.name}</h3>
-        </div>
         <div className="childdetail_milestone">
-            {milestoneChild ? <><MilestoneProvider>
-                <MilestoneList />
-                </MilestoneProvider></> : "false"}
+            {milestoneChild ? <MilestoneProvider>
+                <MilestoneListPreview />
+                </MilestoneProvider> : "false"}
             <div className="detail_link">
             <Link to={`/milestones/list/${child.id}`}>View All Milestones</Link>
             </div>
             </div>
         <div className="childdetail_provider">
             {providerChild ? <> <ProviderProvider>
-                <ProviderList />
+                <ProviderListPreview />
             </ProviderProvider> </> : "false"}
             <div className="detail_link">
             <Link to={`/providers/list/${child.id}`}>View All Providers</Link>

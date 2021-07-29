@@ -14,8 +14,13 @@ export const MilestoneListPreview = () => {
 
     
     const { childId } = useParams();
-    
-    let foundChild = milestones.filter(c => c.childId === child.id)
+
+    const sortedMilestones = milestones.sort((a, b) => {
+        return (
+          new Date(...b.date.split('/')) - new Date(...a.date.split('/'))
+        );
+      });
+  
 
     useEffect(() => {
         console.log("useEffect", childId)
@@ -25,24 +30,31 @@ export const MilestoneListPreview = () => {
             setChild(response)
         })
     }, [])
-    console.log("filter" , foundChild)
-    console.log("child" , child)
+
+    const milestoneMap = sortedMilestones.map(milestone => {
+        if(milestone.childId === child.id){
+    return <MilestoneCard key={milestone.id} milestone={milestone} />}
+    })
+    
+    const milestoneFilter = milestoneMap.filter((m) =>{ 
+            return m !== undefined})
+
+            console.log("milestoneFilter" ,milestoneFilter)
 
     return (
         <>
-        
-        <div className="milestones">
-        <h2>Milestones</h2>
-        <div className="milestones_list">
-        {console.log("MilestoneList: Render", milestones)}
-          {
-             milestones.map(milestone => {
-                 if(milestone.childId === child.id){
-              return <MilestoneCard key={milestone.id} milestone={milestone} />}
-            })
-          }
-          </div>
-        </div>
+            <div className="newmilestonebtn"><button className="btns" onClick={() => 
+                {history.push("/milestone/create")}}>
+                Add Milestone</button></div>
+            <div className="milestones">
+            <h2>Milestones</h2>
+            <div className="milestones_list">
+            {console.log("MilestoneList: Render", milestoneMap)}
+            {
+                milestoneFilter.slice(0,3)
+            }
+            </div>
+            </div>
         </>
     )
 

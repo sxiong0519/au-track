@@ -4,7 +4,7 @@ import { ProviderContext } from "./ProviderProvider";
 import { ProviderCard } from "./ProviderCard";
 import { ChildContext } from "../children/ChildProvider";
 
-export const ProviderList = () => {
+export const ProviderListPreview = () => {
 
     const { providers, getProviders } = useContext(ProviderContext)
     const { getChildById } = useContext(ChildContext)
@@ -13,6 +13,14 @@ export const ProviderList = () => {
     const history = useHistory()
 
     const { childId } = useParams();
+
+    const sortedProviders = providers.sort((a, b) => {
+      return (
+        new Date(...b.date.split('/')) - new Date(...a.date.split('/'))
+      );
+    });
+
+    console.log("ditto", sortedProviders)
 
     useEffect(() => {
         console.log("LocationList: useEffect - getProviders")
@@ -23,7 +31,14 @@ export const ProviderList = () => {
         })
     }, [])
 
-    console.log("provider child", childId)
+    const providerMap = sortedProviders.map(provider => {
+      if(provider.childId === child.id){
+      return <ProviderCard key={provider.id} provider={provider} />}
+    })
+
+    const providerFilter = providerMap.filter((p) => {
+      return p !== undefined
+    })
 
     return (
         <>
@@ -35,10 +50,7 @@ export const ProviderList = () => {
         <div className="providers_list">
         {console.log("ProviderList: Render", providers)}
           {
-             providers.map(provider => {
-                  if(provider.childId === child.id){
-              return <ProviderCard key={provider.id} provider={provider} />}
-            })
+             providerFilter.slice(0,3)
           }
           </div>
         </div>
