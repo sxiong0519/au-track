@@ -5,7 +5,7 @@ import { MilestoneContext } from "./MilestoneProvider"
 
 
 export const MilestoneCard = ({ milestone }) => {
-    const {deleteMilestone} = useContext(MilestoneContext)
+    const {deleteMilestone, getMilestoneById} = useContext(MilestoneContext)
     const history = useHistory();
     
     const milestoneDelete = () => {
@@ -20,12 +20,14 @@ export const MilestoneCard = ({ milestone }) => {
                 <li>{milestone.date}</li>
                 <li>{milestone.description}</li>
                 </ul>
+                <center>
                 <div className="buttons">
                     <button className="btns" onClick={milestoneDelete}>Delete</button>
                     <button className="btns" onClick={() => {
                         history.push(`/milestones/edit/${milestone.id}`)
                         }}>Edit</button>
                 </div>
+                </center>
             </div>
 
         </>

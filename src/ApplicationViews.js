@@ -1,9 +1,11 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { ProviderForm } from "./components/care/ProviderForm"
 import { ProviderList } from "./components/care/ProviderList"
 import { ProviderProvider } from "./components/care/ProviderProvider"
 import { ChildDetail } from "./components/children/ChildDetail"
 import { ChildForm } from "./components/children/ChildForm"
+import { ChildProfilePic } from "./components/children/ChildProfilePic"
 import { ChildProvider } from "./components/children/ChildProvider"
 import { LocationForm } from "./components/locations/LocationForm"
 import { LocationList } from "./components/locations/LocationList"
@@ -40,14 +42,12 @@ export const ApplicationViews = () => {
                 </Route>
                 <Route exact path="/children/detail/:childId(\d+)">
                     <NavChild />
+                    <ChildProfilePic/>
                     <ChildDetail />
                 </Route>
                 <Route exact path="/milestones/list/:childId(\d+)">
                     <NavChild />
-                    <MilestoneList />
-                </Route>
-                <Route exact path="/milestones/list">
-                    <NavChild />
+                    <ChildProfilePic/>
                     <MilestoneList />
                 </Route>
                 <Route exact path="/milestone/create">
@@ -61,7 +61,14 @@ export const ApplicationViews = () => {
                 <ProviderProvider>
                 <Route exact path="/providers/list/:childId(\d+)">    
                     <NavChild />
+                    <ChildProfilePic/>
                     <ProviderList />
+                </Route>
+                <Route exact path="/provider/create">
+                    <ProviderForm/>
+                </Route>
+                <Route path="/providers/edit/:providerId(\d+)">
+                    <ProviderForm/>
                 </Route>
                 </ProviderProvider>
             </ChildProvider>
