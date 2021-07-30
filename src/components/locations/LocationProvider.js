@@ -5,6 +5,7 @@ export const LocationContext = createContext()
 
 export const LocationProvider = (props) => {
     const [locations, setLocations] = useState([])
+    const [searchTerms, setSearchTerms] = useState("")
 
 
     const getLocations = () => {
@@ -48,7 +49,7 @@ export const LocationProvider = (props) => {
 
 
     return (
-        <LocationContext.Provider value={{locations, getLocations, addLocations, getLocationById, deleteLocation, updateLocation}}>
+        <LocationContext.Provider value={{locations, getLocations, addLocations, getLocationById, deleteLocation, updateLocation, setSearchTerms, searchTerms}}>
             {props.children}
         </LocationContext.Provider>
     )

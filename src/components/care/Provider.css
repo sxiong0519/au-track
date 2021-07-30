@@ -5,3 +5,14 @@
 }
 
 
+.wholeproviders {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.providersearches {
+    background-color: yellow;
+    height: auto;
+    margin-right: .5em;
+    padding: .5em;
+}

@@ -1,0 +1,22 @@
+.wholelocations {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.locationsearches {
+    background-color: yellow;
+    height: auto;
+    margin-right: .5em;
+    padding: .5em;
+}
+
+.locations_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Location_card {
+    display:flex;
+    flex-direction: column;
+    padding: .5em;
+}

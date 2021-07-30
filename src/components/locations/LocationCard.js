@@ -20,7 +20,7 @@ export const LocationCard = ({ location }) => {
             {location.description}
             <br/>
             Posted by: {location.parent.name}
-            </div>
+            
             {location.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
             <section className="buttons">
 			<button className="btns" onClick={locationDelete}>Delete</button>
@@ -28,6 +28,7 @@ export const LocationCard = ({ location }) => {
                 history.push(`/locations/edit/${location.id}`)
 			        }}>Edit</button>
 			</section> : ""}
+            </div>
         </>
 )}
 

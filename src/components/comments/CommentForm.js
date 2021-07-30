@@ -69,11 +69,11 @@ export const CommentForm = ({ tip }) => {
 
 return (
         <form className="commentForm">
-            <h1 className="commentForm__title comment_header">{commentId ? "Update comment" : "New comment"}</h1>
+            <h2 className="commentForm__title comment_header">{commentId ? "Update comment" : "New comment"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="comment">Comment:</label>
-                    <input type="text" id="comment" required autoFocus className="form-control" placeholder="Enter a subject title" value={comment.title} onChange={handleControlledInputChange} />
+                    <input type="text" id="comment" required autoFocus className="form-control" placeholder="Enter a comment" value={comment.title} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <div className="buttons"><button className="btns" disabled={isLoading} onClick={
@@ -83,7 +83,7 @@ return (
                 }
             }>
                  {commentId ? "Update comment" : "Save comment"}
-            </button>{commentId ? <button className="btns" onClick={() => history.push(`/tips/detail/${tips.id}`)}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
+            </button>{commentId ? <button className="btns" onClick={() => history.push(`/tips/detail/${tip.id}`)}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
             </div>
         </form>
     )
