@@ -1,24 +1,42 @@
-import React, { useContext } from "react"
-import { Link, useHistory } from "react-router-dom"
+import React, { useContext, useEffect, useState } from "react"
+import { Link, useHistory, useParams } from "react-router-dom"
+import { TipContext } from "../tips/TipProvider"
 import "./Comment.css"
 import { CommentContext } from "./CommentProvider"
 
 
 
 export const CommentCard = ({ comment }) => {
-    // const { deletecomment } = useContext(CommentContext)
-    // const history = useHistory();
+    const { deleteComment } = useContext(CommentContext)
+    const { getTipById } = useContext(TipContext)
+    const history = useHistory();
 
-    // const commentDelete = () => {
-    //     deletecomment(comment.id)
-    // }
-    
+    const [tip, setTip] = useState({})
+
+    const { tipId } = useParams()
+
+    const commentDelete = () => {
+        deleteComment(comment.id)
+    }
+
+    useEffect(() => {
+        getTipById(tipId)
+        .then((response) => {
+            setTip(response)
+        })
+    }, [])
+
     return (
         <>
             <div className="comment_card">
-            {comment.comment}
-            {comment.parent.name}
+            <h4>{comment.parent.name}:</h4>
+            {comment.comment}   
+            {comment.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
+            <section className="buttons">
+			<button className="btns" onClick={commentDelete}>Delete</button>
+			</section> : ""}         
             </div>
+            
         </>
 )}
 

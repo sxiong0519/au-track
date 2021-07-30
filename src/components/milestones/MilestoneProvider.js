@@ -5,6 +5,7 @@ export const MilestoneContext = createContext()
 
 export const MilestoneProvider = (props) => {
     const [milestones, setMilestones] = useState([])
+    const [searchTerms, setSearchTerms] = useState("")
 
 
     const getMilestones = () => {
@@ -47,7 +48,7 @@ export const MilestoneProvider = (props) => {
 	}
 
     return (
-        <MilestoneContext.Provider value={{milestones, getMilestones, getMilestoneById, addMilestones, deleteMilestone, updateMilestone}}>
+        <MilestoneContext.Provider value={{milestones, getMilestones, getMilestoneById, addMilestones, deleteMilestone, updateMilestone, searchTerms, setSearchTerms}}>
             {props.children}
         </MilestoneContext.Provider>
     )

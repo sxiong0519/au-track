@@ -3,12 +3,15 @@ import { useHistory, useParams } from "react-router-dom";
 import { ProviderContext } from "./ProviderProvider";
 import { ProviderCard } from "./ProviderCard";
 import { ChildContext } from "../children/ChildProvider";
+import { ProviderSearch } from "./ProviderSearch";
+import { ChildProfilePic } from "../children/ChildProfilePic";
 
 export const ProviderList = () => {
 
-    const { providers, getProviders } = useContext(ProviderContext)
+    const { searchTerms, providers, getProviders } = useContext(ProviderContext)
     const { getChildById } = useContext(ChildContext)
     const [child, setChild] = useState({})
+    const [filteredProviders, setFiltered] = useState([]);
 
     const history = useHistory()
 
@@ -23,25 +26,43 @@ export const ProviderList = () => {
         })
     }, [])
 
-    console.log("provider child", childId)
+    useEffect(() => {
+      if (searchTerms !== "") {
+        const subset = providers.filter((provider) =>
+          provider.name.toLowerCase().includes(searchTerms) ||
+          provider.specialty.toLowerCase().includes(searchTerms) ||
+          provider.description.toLowerCase().includes(searchTerms)
+        );
+       
+        setFiltered(subset);
+      } else {
+        setFiltered(providers);
+      }
+    }, [searchTerms, providers]);
 
     return (
         <>
+          <h2>Providers</h2>
+          <div className="wholeproviders">
+            <div className="providersearches">
+              <ChildProfilePic/>
+              <ProviderSearch/>
          <div className="newproviderbtn"><button className="btns" onClick={() => 
                 {history.push("/provider/create")}}>
                 Add Provider</button></div>
+                </div>      
         <div className="providers">
-          <h2>Providers</h2>
         <div className="providers_list">
         {console.log("ProviderList: Render", providers)}
           {
-             providers.map(provider => {
+             filteredProviders.map(provider => {
                   if(provider.childId === parseInt(childId)){
               return <ProviderCard key={provider.id} provider={provider} />}
             })
           }
           </div>
         </div>
+        </div>      
         </>
     )
 

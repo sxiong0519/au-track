@@ -52,7 +52,6 @@ export const ApplicationViews = () => {
                     </Route>
                     <Route exact path="/milestones/list/:childId(\d+)">
                         <NavChild />
-                        <ChildProfilePic/>
                         <MilestoneList />
                     </Route>
                     <Route exact path="/milestone/create">
@@ -66,7 +65,6 @@ export const ApplicationViews = () => {
                     <ProviderProvider>
                     <Route exact path="/providers/list/:childId(\d+)">    
                         <NavChild />
-                        <ChildProfilePic/>
                         <ProviderList />
                     </Route>
                     <Route exact path="/provider/create">
@@ -81,6 +79,7 @@ export const ApplicationViews = () => {
             <TipProvider>
             <CommentProvider>
                 <Route path="/tips/detail/:tipId(\d+)">
+                    <NavHome/>
                     <TipDetail/>
                     <CommentList/>
                 </Route>

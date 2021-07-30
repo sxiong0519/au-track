@@ -4,7 +4,14 @@
     justify-content: space-evenly;
 }
 
-/* .milestone_card {
-    border: blue 3px solid;
-    padding: 4px;
-} */
+.wholemilestones {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.milestonessearches {
+    background-color: yellow;
+    height: auto;
+    margin-right: .5em;
+    padding: .5em;
+}

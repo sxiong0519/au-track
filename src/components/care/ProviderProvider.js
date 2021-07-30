@@ -5,6 +5,7 @@ export const ProviderContext = createContext()
 
 export const ProviderProvider = (props) => {
     const [providers, setProviders] = useState([])
+    const [searchTerms, setSearchTerms] = useState("")
 
 
     const getProviders = () => {
@@ -48,7 +49,7 @@ export const ProviderProvider = (props) => {
 
 
     return (
-        <ProviderContext.Provider value={{providers, getProviders, getProviderById, addProviders, deleteProvider, updateProvider}}>
+        <ProviderContext.Provider value={{providers, getProviders, getProviderById, addProviders, deleteProvider, updateProvider, searchTerms, setSearchTerms}}>
             {props.children}
         </ProviderContext.Provider>
     )

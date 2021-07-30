@@ -5,7 +5,7 @@ export const TipContext = createContext()
 
 export const TipProvider = (props) => {
     const [tips, setTips] = useState([])
-
+    const [searchTerms, setSearchTerms] = useState("")
 
     const getTips = () => {
         return fetch("http://localhost:8088/tips?_expand=parent")
@@ -48,7 +48,7 @@ export const TipProvider = (props) => {
 
 
     return (
-        <TipContext.Provider value={{tips, getTips, addTips, getTipById, deleteTip, updateTip}}>
+        <TipContext.Provider value={{tips, getTips, addTips, getTipById, deleteTip, updateTip, searchTerms, setSearchTerms}}>
             {props.children}
         </TipContext.Provider>
     )
