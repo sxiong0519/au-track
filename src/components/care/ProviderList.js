@@ -36,7 +36,7 @@ export const ProviderList = () => {
         {console.log("ProviderList: Render", providers)}
           {
              providers.map(provider => {
-                  if(provider.childId === child.id){
+                  if(provider.childId === parseInt(childId)){
               return <ProviderCard key={provider.id} provider={provider} />}
             })
           }

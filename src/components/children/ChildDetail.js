@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ProviderList } from "../care/ProviderList";
 import { ProviderListPreview } from "../care/ProviderListPreview";
 import { ProviderContext, ProviderProvider} from "../care/ProviderProvider";
-import { MilestoneCard } from "../milestones/MilestoneCard";
-import { MilestoneList } from "../milestones/MilestoneList";
 import { MilestoneListPreview } from "../milestones/MilestoneListPreview";
 import { MilestoneContext, MilestoneProvider } from "../milestones/MilestoneProvider";
 import { ChildContext } from "./ChildProvider";
