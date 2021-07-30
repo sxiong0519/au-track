@@ -64,7 +64,9 @@ export const ChildForm = () => {
         setIsLoading(false)
     }
 }, [])
-
+    const uploadImage = async e => {
+        
+    }
 
 return (
         <form className="childForm">
@@ -75,12 +77,14 @@ return (
                     <input type="text" id="name" required autoFocus className="form-control" placeholder="Enter child's name" value={child.name} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
-            <fieldset>
+            {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="image">Image:</label>
                     <input type="text" id="image" required autoFocus className="form-control" placeholder="Upload an image" value={child.image} onChange={handleControlledInputChange} />
                 </div>
-            </fieldset>
+            </fieldset> */}
+
+            <input type="file" name="file" placeholder="Upload an image" onChange={uploadImage}/>
             <div className="buttons"><button className="btns" disabled={isLoading} onClick={
                 (event) => {
                     event.preventDefault()
