@@ -31,7 +31,8 @@ export const ProviderList = () => {
         const subset = sortedProviders.filter((provider) =>
           provider.name.toLowerCase().includes(searchTerms) ||
           provider.specialty.toLowerCase().includes(searchTerms) ||
-          provider.description.toLowerCase().includes(searchTerms)
+          provider.description.toLowerCase().includes(searchTerms) ||
+          provider.date.includes(searchTerms)
         );
        
         setFiltered(subset);

@@ -16,8 +16,12 @@ export const LocationCard = ({ location }) => {
     return (
         <>
             <div className="Location_card">
-            <h2>{location.title}</h2>
+            <div className="location_title">
+                {location.title}
+                </div>
             {location.description}
+            <br/>
+            Address: {location.address}
             <br/>
             Posted by: {location.parent.name}
             

@@ -11,11 +11,11 @@ export const NavHome = (props) => {
         <div className="navigation">
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Home </Link>
+                <Link className="navbar__link" to="/">Home</Link>
             </li>
             
             <li className="navbar__item">
-                <Link className="navbar__link" to="/tips">Tips/Tricks </Link>
+                <Link className="navbar__link" to="/tips">Forum </Link>
             </li>
             
             <li className="navbar__item">

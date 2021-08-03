@@ -1,14 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    padding: 10px;
-    font-size: 2em;
     margin-top: 0;
 }
 
 .navbar__item {
-
     list-style-type: none;
+    color: #3b4e50;
+    font-size: 2em;
 }
 
+
+.navbar__link {
+    background: url(brush-stroke-banner-6.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #3b4e50;
+    padding: 0em 1em .5em;
+    font-family: 'Staatliches', cursive;
+    }

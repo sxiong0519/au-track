@@ -39,6 +39,7 @@ export const LocationForm = () => {
             id: location.id,
             title: location.title,
             description: location.description,
+            date: Date.now(),
             address: location.address,
             parentId: parseInt(localStorage.getItem("autrack_user"))
         })
@@ -47,6 +48,7 @@ export const LocationForm = () => {
         const newLocation = {
           title: location.title,
           description: location.description,
+          date: Date.now(),
           address: location.address,
           parentId: parseInt(localStorage.getItem("autrack_user"))
       }

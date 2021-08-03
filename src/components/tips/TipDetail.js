@@ -29,14 +29,15 @@ export const TipDetail = () => {
 
     return (
         <>
-        <div className="tip_card">
+        <div className="tip_detail">
             <h2>{tip.title}</h2>
             {tip.description}
             <br/>
             Posted by: {tip.parent?.name}
+            <p/>
             </div>
             {tip.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
-            <section className="buttons">
+            <section className="buttons tipbtns">
 			<button className="btns" onClick={tipDelete}>Delete</button>
             <button className="btns" onClick={() => {
                 history.push(`/tips/edit/${tip.id}`)

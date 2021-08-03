@@ -1,7 +1,3 @@
-/* .childimg {
-    height: auto;
-    width: 15em;
-} */
 .child_image {
     border-radius: 40%;
     height: auto;
@@ -12,6 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    font-family: 'Pangolin', cursive;
 }
 
 .detail_link {
@@ -22,7 +19,7 @@
 .detailimg {
     border-radius: 100%;
     height: 5em;
-    width: 5em;
+    width: auto;
 }
 
 .detailheader{
@@ -36,13 +33,22 @@
 }
 
 .childdetail_milestone {
-    background-color: antiquewhite;
-    margin: 1em 0;
+
     padding: 2em;
 }
 
 .childdetail_provider {
-    background-color: antiquewhite;
-    margin: 1em 0;
     padding: 2em;
+}
+
+.child_link {
+    color: #3b4e50;
+    padding: 0em 1em .5em;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    }
+
+.buttons {
+    display:flex;
+    justify-content: space-around;
 }

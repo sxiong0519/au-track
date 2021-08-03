@@ -28,7 +28,7 @@ export const CommentForm = ({ tip }) => {
   }
 
   const handleClickSaveComment = () => {
-    if (comment.comment === undefined) {
+    if (comment.comment === "") {
         window.alert("Please complete the form")
     } else if (commentId) {
         updateComment({
@@ -49,6 +49,7 @@ export const CommentForm = ({ tip }) => {
       addComments(newComment)
         .then(() => history.push(`/tips/detail/${tip.id}`))
       }
+      setComment("Enter a comment")
     }
 
     useEffect(() => {
@@ -69,17 +70,18 @@ export const CommentForm = ({ tip }) => {
 
 return (
         <form className="commentForm">
-            <h2 className="commentForm__title comment_header">{commentId ? "Update comment" : "New comment"}</h2>
+            <h2 className="commentForm__title comment_header">{commentId ? "Update comment" : "Start a conversation:"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="comment">Comment:</label>
-                    <input type="text" id="comment" required autoFocus className="form-control" placeholder="Enter a comment" value={comment.title} onChange={handleControlledInputChange} />
+                    <input type="text" id="comment" required autoFocus className="form-control" placeholder="Enter a comment" value={comment.comment} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <div className="buttons"><button className="btns" disabled={isLoading} onClick={
                 (event) => {
                     event.preventDefault()
                     handleClickSaveComment()
+                    setComment({comment:""})
                 }
             }>
                  {commentId ? "Update comment" : "Save comment"}

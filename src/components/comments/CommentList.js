@@ -26,13 +26,16 @@ export const CommentList = () => {
     return (
         <>
         <div className="comments">
-        <h2>Comments</h2>
+        <h2>Comments:</h2>
         <div className="comments_list">
         {console.log("CommentList: Render", comments)}
           {
              comments.map(comment => {
                  if (comment.tipId === parseInt(tipId)){
               return <CommentCard key={comment.id} comment={comment} />}
+              else {
+                  return "Be the first to comment!"
+              }
             })
           }
           </div>

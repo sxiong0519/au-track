@@ -14,10 +14,12 @@ export const AuTrack = () => (
         if (localStorage.getItem("autrack_user")) {
           return (
             <>
+            <div className="appview">
             <center><img className="logoimage" src={logo} /></center>
             <ChildProvider>
               <ApplicationViews />
               </ChildProvider>
+              </div>
             </>
           );
         } else {

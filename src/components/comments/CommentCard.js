@@ -30,11 +30,13 @@ export const CommentCard = ({ comment }) => {
         <>
             <div className="comment_card">
             <h4>{comment.parent.name}:</h4>
-            {comment.comment}   
-            {comment.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
-            <section className="buttons">
-			<button className="btns" onClick={commentDelete}>Delete</button>
-			</section> : ""}         
+            {comment.comment} 
+            <br/>
+            {new Date(comment.date).toLocaleDateString()} 
+                {comment.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
+                    <section className="buttons">
+                        <button className="btns" onClick={commentDelete}>Delete</button>
+                    </section> : ""}         
             </div>
             
         </>
