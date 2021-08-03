@@ -5,7 +5,7 @@ import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import "./AuTrack.css";
 import { ChildProvider } from "./components/children/ChildProvider";
-
+import logo from "./components/nav/navlogo.png"
 
 export const AuTrack = () => (
   <>
@@ -14,6 +14,7 @@ export const AuTrack = () => (
         if (localStorage.getItem("autrack_user")) {
           return (
             <>
+            <center><img className="logoimage" src={logo} /></center>
             <ChildProvider>
               <ApplicationViews />
               </ChildProvider>

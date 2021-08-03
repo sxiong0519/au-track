@@ -1,6 +1,6 @@
 .wholetips {
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .tipsearches {
@@ -8,4 +8,18 @@
     height: auto;
     margin-right: .5em;
     padding: .5em;
+}
+
+.tips_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-basis: auto;
+}
+
+.tip_card {
+    display:flex;
+    flex-direction: column;
+    padding: .5em;
+    width: 15em
 }

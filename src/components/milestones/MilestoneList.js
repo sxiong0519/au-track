@@ -29,7 +29,7 @@ export const MilestoneList = () => {
 
     useEffect(() => {
         if (searchTerms !== "") {
-          const subset = milestones.filter((milestone) =>
+          const subset = sortedMilestones.filter((milestone) =>
             milestone.milestone.toLowerCase().includes(searchTerms) ||
             milestone.description.toLowerCase().includes(searchTerms)
           );
@@ -40,28 +40,34 @@ export const MilestoneList = () => {
         }
       }, [searchTerms, milestones]);
 
+      const sortedMilestones = milestones.sort((a, b) => {
+        return (
+          new Date(...b.date.split('/')) - new Date(...a.date.split('/'))
+        );
+      });
+
+      
+
     return (
         <> 
         <h2>Milestones</h2>
             <div className="wholemilestones">
-            <div className="milestonessearches">
-                <ChildProfilePic/>
-                <MilestoneSearch/>
-            <div className="newmilestonebtn"><button className="btns" onClick={() => 
-                {history.push("/milestone/create")}}>
-                Add Milestone</button></div>
+                <div className="milestonessearches">
+                    <ChildProfilePic/>
+                    <MilestoneSearch/>
+                    <div className="newmilestonebtn"><button className="btns" onClick={() => 
+                        {history.push("/milestone/create")}}>
+                        Add Milestone</button></div>
                 </div>
-            <div className="milestones">
-            <div className="milestones_list">
-            {console.log("MilestoneList: Render", milestones)}
-            {
-                filteredMilestones.map(milestone => {
-                    if(milestone.childId === parseInt(childId)){
-                return <MilestoneCard key={milestone.id} milestone={milestone} />}
-                })
-            }
-            </div>
-            </div>
+                <div className="milestones_list">
+                    {console.log("MilestoneList: Render", milestones)}
+                    {
+                        filteredMilestones.map(milestone => {
+                            if(milestone.childId === parseInt(childId)){
+                        return <MilestoneCard key={milestone.id} milestone={milestone} />}
+                        })
+                    }
+                </div>
             </div>
         </>
     )

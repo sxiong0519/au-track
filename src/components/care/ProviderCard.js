@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "./Provider.css"
 import { ProviderContext } from "./ProviderProvider"
 
@@ -14,10 +14,10 @@ export const ProviderCard = ({ provider }) => {
         
             <section className="provider_card">
                 <ul>
-                    <li>{provider.name}</li>
-                    <li>{provider.specialty}</li>
-                    <li>{provider.description}</li>
-                    <li>{provider.date}</li>
+                    <li>Provider: {provider.name}</li>
+                    <li>Specialty: {provider.specialty}</li>
+                    <li>Care: {provider.description}</li>
+                    <li>Date: {provider.date}</li>
                 </ul>
                 <center>
                 <div className="buttons">

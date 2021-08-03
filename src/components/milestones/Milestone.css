@@ -2,11 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    flex-basis: auto;
 }
 
 .wholemilestones {
-    display:flex;
-    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .milestonessearches {
@@ -14,4 +16,10 @@
     height: auto;
     margin-right: .5em;
     padding: .5em;
+    width: 30em;
+}
+
+.milestone_card {
+    height: auto;
+    width: 25em;
 }
