@@ -43,9 +43,6 @@ export const MilestoneListPreview = () => {
 
     return (
         <>
-            <div className="newmilestonebtn"><button className="btns" onClick={() => 
-                {history.push("/milestone/create")}}>
-                Add Milestone</button></div>
             <div className="milestones">
             <h2>Milestones</h2>
             <div className="milestones_list">

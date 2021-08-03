@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "./Milestone.css"
 import { MilestoneContext } from "./MilestoneProvider"
 
 
 export const MilestoneCard = ({ milestone }) => {
-    const {deleteMilestone, getMilestoneById} = useContext(MilestoneContext)
+    const {deleteMilestone} = useContext(MilestoneContext)
     const history = useHistory();
     
     const milestoneDelete = () => {
@@ -15,9 +15,9 @@ export const MilestoneCard = ({ milestone }) => {
     return (
         <>
             <div className="milestone_card">
+            <h4>{milestone.milestone}</h4>
                 <ul>
-                <li>{milestone.milestone}</li>
-                <li>{milestone.date}</li>
+                <li>Occurred: {milestone.date}</li>
                 <li>{milestone.description}</li>
                 </ul>
                 <center>

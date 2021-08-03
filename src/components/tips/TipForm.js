@@ -15,19 +15,10 @@ export const TipForm = () => {
   const { tipId } = useParams();
   const history = useHistory();
 
-
-
-  //when a field changes, update state. The return will re-render and display based on the values in state
-  //Controlled component
+  
   const handleControlledInputChange = (event) => {
-    /* When changing a state object or array,
-    always create a copy, make changes, and then set state.*/
     const newTip = { ...tip }
-    /* Animal is an object with properties.
-    Set the property to the new value
-    using object bracket notation. */
     newTip[event.target.id] = event.target.value
-    // update state
     setTip(newTip)
   }
 

@@ -17,7 +17,7 @@ export const LocationList = () => {
 
     useEffect(() => {
       if (searchTerms !== "") {
-        // If the search field is not blank, display matching Users
+        // If the search field is not blank, display matching locations
         const subset = locations.filter((location) =>
           location.title.toLowerCase().includes(searchTerms)
         );

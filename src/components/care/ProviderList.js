@@ -16,7 +16,7 @@ export const ProviderList = () => {
     const history = useHistory()
 
     const { childId } = useParams();
-
+    
     useEffect(() => {
         console.log("LocationList: useEffect - getProviders")
         getChildById(childId)
@@ -28,7 +28,7 @@ export const ProviderList = () => {
 
     useEffect(() => {
       if (searchTerms !== "") {
-        const subset = providers.filter((provider) =>
+        const subset = sortedProviders.filter((provider) =>
           provider.name.toLowerCase().includes(searchTerms) ||
           provider.specialty.toLowerCase().includes(searchTerms) ||
           provider.description.toLowerCase().includes(searchTerms)
@@ -39,6 +39,14 @@ export const ProviderList = () => {
         setFiltered(providers);
       }
     }, [searchTerms, providers]);
+
+    const sortedProviders = providers.sort((a, b) => {
+      return (
+        new Date(...b.date.split('/')) - new Date(...a.date.split('/'))
+      );
+    });
+
+    console.log("sort", sortedProviders)
 
     return (
         <>

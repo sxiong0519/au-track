@@ -65,7 +65,7 @@ export const MilestoneForm = () => {
     })
 }, [])
 
-console.log("boom", milestone.childId)
+const filteredChildren = children.filter(c => c.parentId === parseInt(localStorage.getItem("autrack_user")))
 
 return (
         <form className="milestoneForm">
@@ -79,7 +79,7 @@ return (
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
-                    <input type="text" id="description" required autoFocus className="form-control" placeholder="Enter a description" value={milestone.description} onChange={handleControlledInputChange} />
+                    <textarea type="text" id="description" required autoFocus className="form-control" placeholder="Enter a description" value={milestone.description} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
@@ -99,7 +99,7 @@ return (
             <label htmlFor="child">Child: </label>
             <select value={milestone.childId} name="childId" id="childId" className="form-control" onChange={handleControlledInputChange}>
               <option value="0">Select a Child</option>
-              {children.map(c => (
+              {filteredChildren.map(c => (
                 <option key={c.id} value={c.id}>
                   {c.name}
                 </option>

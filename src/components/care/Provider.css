@@ -7,7 +7,7 @@
 
 .wholeproviders {
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .providersearches {
@@ -15,4 +15,10 @@
     height: auto;
     margin-right: .5em;
     padding: .5em;
+    width: 35em;
+}
+
+.provider_card {
+    height: auto;
+    width: 25em
 }

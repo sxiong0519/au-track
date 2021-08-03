@@ -64,6 +64,8 @@ export const ProviderForm = () => {
     })
 }, [])
 
+const filteredChildren = children.filter(c => c.parentId === parseInt(localStorage.getItem("autrack_user")))
+
 return (
         <form className="providerForm">
             <h1 className="providerForm__title provider_header">{providerId ? "Update provider" : "New provider"}</h1>
@@ -96,7 +98,7 @@ return (
             <label htmlFor="child">Child: </label>
             <select value={provider.childId} name="childId" id="childId" className="form-control" onChange={handleControlledInputChange}>
               <option value="0">Select a Child</option>
-              {children.map(c => (
+              {filteredChildren.map(c => (
                 <option key={c.id} value={c.id}>
                   {c.name}
                 </option>

@@ -18,6 +18,8 @@ export const ChildProfilePic = () => {
           setChild(response)
         })
     }, [])
+
+    
     return (
         <>
         <div className="detailheader">
