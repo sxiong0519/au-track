@@ -1,10 +1,11 @@
 .wholetips {
     display:flex;
     flex-wrap: nowrap;
+    font-family: 'Pangolin', cursive;
 }
 
 .tipsearches {
-    background-color: yellow;
+    background-color: #ffc94b;
     height: auto;
     margin-right: .5em;
     padding: .5em;
@@ -14,12 +15,41 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    flex-basis: auto;
 }
 
 .tip_card {
     display:flex;
     flex-direction: column;
+    border: solid 5px;
+    border-image: linear-gradient(#ffc94b, #F17A7E) 10;
+    border-radius: 10%;
     padding: .5em;
-    width: 15em
+    width: auto;
+    margin: .5em;
+}
+
+.tip__link {
+    color: #3b4e50;
+    padding: 0em 1em .5em;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    }
+
+.tip_detail{
+    font-family: 'Pangolin', cursive;
+    width: 45em;
+    margin-left: 20em;
+}
+
+.tipForm {
+    font-family: 'Pangolin', cursive;
+}
+
+.descriptiontip {
+    height: 50%
+}
+
+.tipbtns{
+    display: flex;
+    justify-content: space-evenly;
 }

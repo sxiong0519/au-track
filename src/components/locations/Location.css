@@ -4,10 +4,11 @@
 }
 
 .locationsearches {
-    background-color: yellow;
+    background-color: #ffc94b;
     height: auto;
     margin-right: .5em;
     padding: .5em;
+    font-family: 'Pangolin', cursive;
 }
 
 .locations_list {
@@ -20,4 +21,15 @@
     flex-direction: column;
     padding: .5em;
     width: 20em;
+    border: solid 5px;
+    border-image: linear-gradient(#ffc94b, #F17A7E) 10;
+    margin: .5em;
+    font-family: 'Pangolin', cursive;
 }
+
+.location_title {
+    color: #3b4e50;
+    padding: 0em 1em .5em;
+    font-family: 'Staatliches', cursive;
+    font-size: 25px;
+    }

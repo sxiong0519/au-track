@@ -25,7 +25,7 @@ export const NavChild = (props) => {
         <div className="navigation">
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Home </Link>
+                <Link className="navbar__link" to="/"><span className="highlight">Home </span></Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to={`/milestones/list/${child.id}`}>Milestones </Link>

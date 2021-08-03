@@ -3,23 +3,39 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     flex-basis: auto;
+    font-family: 'Pangolin', cursive;
 }
 
 .wholemilestones {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    
 }
 
 .milestonessearches {
-    background-color: yellow;
+    background-color: #ffc94b;
     height: auto;
     margin-right: .5em;
     padding: .5em;
-    width: 30em;
+    width: auto; 
+    font-family: 'Pangolin', cursive;
 }
 
 .milestone_card {
     height: auto;
-    width: 25em;
+    width: 20em;
+    display:flex;
+    flex-direction: column;
+    border: solid 5px;
+    border-image: linear-gradient(#ffc94b, #F17A7E) 1;
+    padding: .5em;
+    margin: .5em;
+}
+.milestones {
+    font-family: 'Pangolin', cursive;
+}
+
+h2 {
+    font-family: 'Pangolin', cursive;
 }

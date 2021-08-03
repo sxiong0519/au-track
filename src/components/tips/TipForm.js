@@ -29,6 +29,7 @@ export const TipForm = () => {
         updateTip({
             id: tip.id, 
             title: tip.title,
+            date: Date.now(),
             description: tip.description,
             parentId: parseInt(localStorage.getItem("autrack_user"))
         })
@@ -36,6 +37,7 @@ export const TipForm = () => {
     } else {
         const newTip = {
           title: tip.title,
+          date: Date.now(),
           description: tip.description,
           parentId: parseInt(localStorage.getItem("autrack_user"))
       }
@@ -59,7 +61,7 @@ export const TipForm = () => {
 
 return (
         <form className="tipForm">
-            <h1 className="tipForm__title tip_header">{tipId ? "Update tip" : "New tip"}</h1>
+            <h2 className="tipForm__title tip_header">{tipId ? "Update tip" : "New tip"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Tip:</label>
@@ -69,7 +71,7 @@ return (
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
-                    <input type="text" id="description" required autoFocus className="form-control" placeholder="Enter a description" value={tip.description} onChange={handleControlledInputChange} />
+                    <input type="text" id="description" required autoFocus className="form-control descriptiontip" placeholder="Enter a description" value={tip.description} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <div className="buttons"><button className="btns" disabled={isLoading} onClick={

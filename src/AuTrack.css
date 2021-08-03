@@ -1,4 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Staatliches&display=swap');
+
+
 .logoimage{
     height: 7em;
     width: auto;
+}
+
+.appview{
+    padding: .5em;
+    color: #3b4e50;
+}
+
+button {
+    background-color: #F17A7E;
+    font-family: 'Staatliches', cursive;
+}
+
+input {
+    font-family: 'Pangolin', cursive;
 }

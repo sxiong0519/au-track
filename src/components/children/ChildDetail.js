@@ -41,7 +41,7 @@ export const ChildDetail = () => {
                 <MilestoneListPreview />
                 </MilestoneProvider> : "false"}
             <div className="detail_link">
-            <Link to={`/milestones/list/${child.id}`}>View All Milestones</Link>
+            <Link className="child_link" to={`/milestones/list/${child.id}`}>View All Milestones</Link>
             </div>
             </div>
         <div className="childdetail_provider">
@@ -49,7 +49,7 @@ export const ChildDetail = () => {
                 <ProviderListPreview />
             </ProviderProvider> </> : "false"}
             <div className="detail_link">
-            <Link to={`/providers/list/${child.id}`}>View All Providers</Link>
+            <Link className="child_link" to={`/providers/list/${child.id}`}>View All Providers</Link>
         </div>
         </div>
         </div>

@@ -15,10 +15,8 @@ export const TipCard = ({ tip }) => {
     return (
         <>
             <div className="tip_card">
-            <Link to={`/tips/detail/${tip.id}`}><h2>{tip.title}</h2></Link>
-            <br/>
+            <Link className="tip__link" to={`/tips/detail/${tip.id}`}><h3>{tip.title}</h3></Link>
             Posted by: {tip.parent.name}
-            
             {tip.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
             <section className="buttons">
 			<button className="btns" onClick={tipDelete}>Delete</button>
