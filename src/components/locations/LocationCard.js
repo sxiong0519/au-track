@@ -41,8 +41,7 @@ export const LocationCard = ({ location }) => {
             <br/>
             Address: {location.address}
             <br/>
-            Posted by: {location.parent.name}
-            
+            Posted by: {location.parent.name}            
             {location.parentId === currentUser ? 
             <section className="buttons">
                 <button className="btns" onClick={locationDelete}>Delete</button>

@@ -30,6 +30,13 @@ export const TipList = () => {
         }
       }, [searchTerms, tips]);
 
+      const sortedTips = tips.sort((a, b) => {
+        return (
+          new Date(b.date) - new Date(a.date)
+        );
+      });
+
+      console.log(sortedTips)
 
     return (
         <>

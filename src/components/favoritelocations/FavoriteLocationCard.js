@@ -1,10 +1,18 @@
 import React, { useContext, useEffect } from "react";
-import { LocationContext } from "../locations/LocationProvider";
+import { ParentContext } from "../parents/ParentProvider";
 import { FavLocationContext } from "./FavoriteLocationsProvider";
 
 
 export const FavLocationCard = ({ fav }) => {
     const { deleteFavLocation } = useContext(FavLocationContext)
+    const { parents, getParents } = useContext(ParentContext)
+
+    useEffect(() => {
+    getParents()
+    }, [])
+
+    const parent = parents.find((p) => p.id === fav.location.parentId)
+    console.log("parents", parent)
 
     const unFavorite = () => {
         deleteFavLocation(fav.id)
@@ -21,7 +29,8 @@ export const FavLocationCard = ({ fav }) => {
             {fav.location.description}
             <br/>
             Address: {fav.location.address}
-
+            <br/>
+            Posted by: {parent?.name}
             {fav.currentUserId === parseInt(localStorage.getItem("autrack_user")) ? 
             <section className="buttons">
 			<button className="btns" onClick={unFavorite}>Delete</button>

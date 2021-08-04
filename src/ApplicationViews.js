@@ -81,7 +81,6 @@ export const ApplicationViews = () => {
                 <Route path="/tips/detail/:tipId(\d+)">
                     <NavHome/>
                     <TipDetail/>
-                    <CommentList/>
                 </Route>
                 </CommentProvider>
                 <Route path="/tips/edit/:tipId(\d+)">

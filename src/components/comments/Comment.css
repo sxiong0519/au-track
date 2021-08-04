@@ -8,3 +8,10 @@
     margin-left: 20em;
     width: 45em;
 }
+
+.comment_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45em; 
+}
