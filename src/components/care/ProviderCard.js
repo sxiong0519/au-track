@@ -17,7 +17,7 @@ export const ProviderCard = ({ provider }) => {
                     <li>Provider: {provider.name}</li>
                     <li>Specialty: {provider.specialty}</li>
                     <li>Care: {provider.description}</li>
-                    <li>Date: {provider.date}</li>
+                    <li>Date: {new Date(provider.date).toLocaleDateString()}</li>
                 </ul>
                 <center>
                 <div className="buttons">

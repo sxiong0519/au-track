@@ -6,7 +6,6 @@ import { TipContext } from "./TipProvider"
 
 export const TipCard = ({ tip }) => {
     const { deleteTip } = useContext(TipContext)
-    const history = useHistory();
 
     const tipDelete = () => {
         deleteTip(tip.id)
@@ -17,13 +16,12 @@ export const TipCard = ({ tip }) => {
             <div className="tip_card">
             <Link className="tip__link" to={`/tips/detail/${tip.id}`}><h3>{tip.title}</h3></Link>
             Posted by: {tip.parent.name}
+            <br/>
+            {new Date(tip.date).toLocaleDateString()}
             {tip.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
             <section className="buttons">
-			<button className="btns" onClick={tipDelete}>Delete</button>
-            <button className="btns" onClick={() => {
-                history.push(`/tips/edit/${tip.id}`)
-			        }}>Edit</button>
-			</section> : ""}
+			<button className="btns" onClick={tipDelete}>Delete</button> 
+            </section> : ""}
             </div>
         </>
 )}

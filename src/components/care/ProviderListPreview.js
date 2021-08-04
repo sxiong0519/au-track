@@ -44,6 +44,9 @@ export const ProviderListPreview = () => {
         <>
         <div className="providers">
           <h2>Providers</h2>
+          <div className="newproviderbtn"><button className="btns" onClick={() => 
+                {history.push("/provider/create")}}>
+                Add Provider</button></div>
         <div className="providers_list">
         {console.log("ProviderList: Render", providers)}
           {

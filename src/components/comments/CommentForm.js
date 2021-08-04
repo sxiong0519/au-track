@@ -49,7 +49,6 @@ export const CommentForm = ({ tip }) => {
       addComments(newComment)
         .then(() => history.push(`/tips/detail/${tip.id}`))
       }
-      setComment("Enter a comment")
     }
 
     useEffect(() => {
@@ -84,9 +83,9 @@ return (
                     setComment({comment:""})
                 }
             }>
-                 {commentId ? "Update comment" : "Save comment"}
-            </button>{commentId ? <button className="btns" onClick={() => history.push(`/tips/detail/${tip.id}`)}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
-            </div>
+            Save comment
+            </button>
+            <button className="btns" onClick={setComment}>Cancel</button>    </div>
         </form>
     )
 }

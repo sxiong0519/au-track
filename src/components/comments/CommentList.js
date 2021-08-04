@@ -11,7 +11,6 @@ export const CommentList = () => {
     const { tips, getTipById } = useContext(TipContext)
     const { tipId } = useParams()
     const [tip, setTip] = useState({})
-    const history = useHistory()
 
     useEffect(() => {
         console.log("useEffect", tipId)
@@ -23,21 +22,17 @@ export const CommentList = () => {
         })
     }, [])
 
+    const filteredComments = comments.filter(c => c.tipId === parseInt(tipId))
+    console.log("fil", filteredComments)
     return (
         <>
         <div className="comments">
         <h2>Comments:</h2>
         <div className="comments_list">
         {console.log("CommentList: Render", comments)}
-          {
-             comments.map(comment => {
-                 if (comment.tipId === parseInt(tipId)){
-              return <CommentCard key={comment.id} comment={comment} />}
-              else {
-                  return "Be the first to comment!"
-              }
-            })
-          }
+          { filteredComments.length > 0 ? filteredComments.map(comment => {
+              return <CommentCard key={comment.id} comment={comment} />}) : "Be the first to comment"
+           }
           </div>
         </div>
         </>

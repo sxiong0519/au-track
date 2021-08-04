@@ -4,6 +4,7 @@ import "./Tip.css"
 import { useParams, useHistory } from "react-router-dom"
 import { ParentContext } from "../parents/ParentProvider"
 import { CommentForm } from "../comments/CommentForm"
+import { CommentList } from "../comments/CommentList"
 
 
 export const TipDetail = () => {
@@ -34,6 +35,8 @@ export const TipDetail = () => {
             {tip.description}
             <br/>
             Posted by: {tip.parent?.name}
+            <br/>
+            {new Date(tip.date).toLocaleDateString()}
             <p/>
             </div>
             {tip.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
@@ -44,6 +47,7 @@ export const TipDetail = () => {
 			        }}>Edit</button>
 			</section> : ""}
             <CommentForm tip={tip}/>
+            <CommentList/>
         </>
     )
 

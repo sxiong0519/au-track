@@ -17,7 +17,7 @@ export const MilestoneCard = ({ milestone }) => {
             <div className="milestone_card">
             <h4>{milestone.milestone}</h4>
                 <ul>
-                <li>Occurred: {milestone.date}</li>
+                <li>Occurred:{new Date(milestone.date).toLocaleDateString()}</li>
                 <li>{milestone.description}</li>
                 </ul>
                 <center>

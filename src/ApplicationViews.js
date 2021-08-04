@@ -7,9 +7,10 @@ import { ChildDetail } from "./components/children/ChildDetail"
 import { ChildForm } from "./components/children/ChildForm"
 import { ChildProfilePic } from "./components/children/ChildProfilePic"
 import { ChildProvider } from "./components/children/ChildProvider"
-import { CommentForm } from "./components/comments/CommentForm"
 import { CommentList } from "./components/comments/CommentList"
 import { CommentProvider } from "./components/comments/CommentProvider"
+import { FavLocationList } from "./components/favoritelocations/FavoriteLocationsList"
+import { FavLocationProvider } from "./components/favoritelocations/FavoriteLocationsProvider"
 import { LocationForm } from "./components/locations/LocationForm"
 import { LocationList } from "./components/locations/LocationList"
 import { LocationProvider } from "./components/locations/LocationProvider"
@@ -24,7 +25,6 @@ import { TipForm } from "./components/tips/TipForm"
 import { TipList } from "./components/tips/TipList"
 import { TipProvider } from "./components/tips/TipProvider"
 import { Home } from "./Home"
-
 
 
 
@@ -81,7 +81,6 @@ export const ApplicationViews = () => {
                 <Route path="/tips/detail/:tipId(\d+)">
                     <NavHome/>
                     <TipDetail/>
-                    <CommentList/>
                 </Route>
                 </CommentProvider>
                 <Route path="/tips/edit/:tipId(\d+)">
@@ -96,16 +95,22 @@ export const ApplicationViews = () => {
                     </Route>
             </TipProvider>
             <LocationProvider>
+            <FavLocationProvider>
                 <Route path="/locations/edit/:locationId(\d+)">
-                        <LocationForm/>
+                    <LocationForm/>
+                </Route>
+                <Route path="/locations/create">
+                    <LocationForm/>
+                </Route>
+                <Route exact path="/locations">
+                    <NavHome />
+                    <LocationList />    
+                </Route>   
+                    <Route path="/favlocations">
+                        <NavHome/>
+                        <FavLocationList/>
                     </Route>
-                    <Route path="/locations/create">
-                        <LocationForm/>
-                    </Route>
-                    <Route exact path="/locations">
-                        <NavHome />
-                        <LocationList />    
-                    </Route>    
+                </FavLocationProvider>
             </LocationProvider>    
             </ParentProvider>    
             
