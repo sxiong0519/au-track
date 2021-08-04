@@ -19,11 +19,8 @@ export const TipCard = ({ tip }) => {
             Posted by: {tip.parent.name}
             {tip.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
             <section className="buttons">
-			<button className="btns" onClick={tipDelete}>Delete</button>
-            <button className="btns" onClick={() => {
-                history.push(`/tips/edit/${tip.id}`)
-			        }}>Edit</button>
-			</section> : ""}
+			<button className="btns" onClick={tipDelete}>Delete</button> 
+            </section> : ""}
             </div>
         </>
 )}

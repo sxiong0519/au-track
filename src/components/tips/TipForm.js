@@ -81,7 +81,7 @@ return (
                 }
             }>
                  {tipId ? "Update tip" : "Save tip"}
-            </button>{tipId ? <button className="btns" onClick={() => history.push("/tips")}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
+            </button>{tipId ? <button className="btns" onClick={() => history.push(`/tips/detail/${tipId}`)}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
             </div>
         </form>
     )

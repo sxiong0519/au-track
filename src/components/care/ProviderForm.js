@@ -25,7 +25,8 @@ export const ProviderForm = () => {
   }
 
   const handleClickSaveProvider = () => {
-    if (provider.name === undefined || provider.specialty === undefined || provider.description === undefined || provider.date === undefined) {
+    if (provider.name === undefined || provider.specialty === undefined || 
+        provider.description === undefined || provider.date === undefined) {
         window.alert("Please complete the form")
     } else if (providerId) {
         updateProvider({

@@ -25,6 +25,7 @@
 .detailheader{
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Pangolin', cursive;
 }
 
 .childdetail {
