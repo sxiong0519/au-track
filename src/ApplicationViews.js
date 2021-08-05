@@ -11,6 +11,8 @@ import { CommentList } from "./components/comments/CommentList"
 import { CommentProvider } from "./components/comments/CommentProvider"
 import { FavLocationList } from "./components/favoritelocations/FavoriteLocationsList"
 import { FavLocationProvider } from "./components/favoritelocations/FavoriteLocationsProvider"
+import { FavTipList } from "./components/favoritetips/FavoriteTipsList"
+import { FavTipProvider } from "./components/favoritetips/FavoriteTipsProvider"
 import { LocationForm } from "./components/locations/LocationForm"
 import { LocationList } from "./components/locations/LocationList"
 import { LocationProvider } from "./components/locations/LocationProvider"
@@ -77,6 +79,7 @@ export const ApplicationViews = () => {
             </ChildProvider>
             <ParentProvider>
             <TipProvider>
+            <FavTipProvider>
             <CommentProvider>
                 <Route path="/tips/detail/:tipId(\d+)">
                     <NavHome/>
@@ -93,6 +96,11 @@ export const ApplicationViews = () => {
                         <NavHome/>
                         <TipList />
                     </Route>
+                    <Route path="/favtips">
+                        <NavHome/>
+                        <FavTipList/>
+                    </Route>
+            </FavTipProvider>        
             </TipProvider>
             <LocationProvider>
             <FavLocationProvider>
