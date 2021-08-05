@@ -1,9 +1,10 @@
-import React, {useContext} from "react"
-import { TipContext } from "./TipProvider"
-import "./Tip.css"
+import React, { useContext } from "react";
+import { FavTipContext } from "./FavoriteTipsProvider";
 
-export const TipSearch = () => {
-    const { setSearchTerms } = useContext(TipContext)
+
+
+export const FavTipSearch = () => {
+    const {setSearchTerms} = useContext(FavTipContext)
 
     return (
         <>

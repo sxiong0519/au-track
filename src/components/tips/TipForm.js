@@ -61,10 +61,10 @@ export const TipForm = () => {
 
 return (
         <form className="tipForm">
-            <h2 className="tipForm__title tip_header">{tipId ? "Update tip" : "New tip"}</h2>
+            <h2 className="tipForm__title tip_header">{tipId ? "Update Post" : "New Post"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="title">Tip:</label>
+                    <label htmlFor="title">Post Title:</label>
                     <input type="text" id="title" required autoFocus className="form-control" placeholder="Enter a subject title" value={tip.title} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
@@ -80,7 +80,7 @@ return (
                     handleClickSaveTip()
                 }
             }>
-                 {tipId ? "Update tip" : "Save tip"}
+                 {tipId ? "Update Post" : "Save Post"}
             </button>{tipId ? <button className="btns" onClick={() => history.push(`/tips/detail/${tipId}`)}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
             </div>
         </form>

@@ -40,13 +40,17 @@ export const TipList = () => {
 
     return (
         <>
-                <h2>Tips</h2>
+                <h2>Community Forum</h2>
         <div className="wholetips">
         <div className="tipsearches">
         <TipSearch/>
         <p/>
-        <div className="newtipbtn"><button className="btns" onClick={() => {history.push("/tips/create")}}>
-			Got a New Tip?</button></div>
+          <div className="newtipbtn">
+            <button className="btns" onClick={() => {history.push("/tips/create")}}>
+              New post?</button>
+          </div>
+          <p/>
+            <button className="btns" onClick={() => {history.push("/favtips")}}>Favorite Posts</button>
         </div>
         <div className="tips">
         <div className="tips_list">

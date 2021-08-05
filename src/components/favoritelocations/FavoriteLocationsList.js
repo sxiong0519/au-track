@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import { LocationContext } from "../locations/LocationProvider";
 import { FavLocationCard } from "./FavoriteLocationCard";
 import { FavLocationSearch } from "./FavoriteLocationSearch";
 import { FavLocationContext } from "./FavoriteLocationsProvider";
@@ -8,22 +7,22 @@ import { FavLocationContext } from "./FavoriteLocationsProvider";
 
 
 export const FavLocationList = () => {
-    const { favLocation, getFavLocation, searchTerms } = useContext(FavLocationContext);
-    const { getLocations } = useContext(LocationContext)
+    const { favLocation, getFavLocation, searchTerms } = useContext(FavLocationContext)
     const [filteredFavLocation, setFilteredFavLocation] = useState([])
     const history = useHistory()
+
+
     useEffect(() => {
         getFavLocation()
     }, [])
 
     useEffect(() => {
         if (searchTerms !== "") {
-          // If the search field is not blank, display matching locations
+          // If the search field is not åblank, display matching locations
           const subset = favLocation.filter((fl) =>
             fl.location.title.toLowerCase().includes(searchTerms) ||
             fl.location.description.toLowerCase().includes(searchTerms) ||
-            fl.location.address.toLowerCase().includes(searchTerms) ||
-            fl.parent.name.toLowerCase().includes(searchTerms)
+            fl.location.address.toLowerCase().includes(searchTerms)
           );
          
           setFilteredFavLocation(subset);
