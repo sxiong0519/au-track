@@ -33,7 +33,7 @@ export const TipForm = () => {
             description: tip.description,
             parentId: parseInt(localStorage.getItem("autrack_user"))
         })
-        .then(() => history.push("/tips"))
+        .then(() => history.push(`/tips/detail/${tipId}`))
     } else {
         const newTip = {
           title: tip.title,

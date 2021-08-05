@@ -55,6 +55,7 @@ export const MilestoneList = () => {
                 <div className="milestonessearches">
                     <ChildProfilePic/>
                     <MilestoneSearch/>
+                    <p/>
                     <div className="newmilestonebtn"><button className="btns" onClick={() => 
                         {history.push("/milestone/create")}}>
                         Add Milestone</button></div>

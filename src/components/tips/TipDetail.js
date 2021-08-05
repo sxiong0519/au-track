@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { TipContext } from "./TipProvider"
 import "./Tip.css"
-import { useParams, useHistory } from "react-router-dom"
+import { useParams, useHistory, Link } from "react-router-dom"
 import { ParentContext } from "../parents/ParentProvider"
 import { CommentForm } from "../comments/CommentForm"
 import { CommentList } from "../comments/CommentList"
@@ -44,7 +44,8 @@ export const TipDetail = () => {
 			<button className="btns" onClick={tipDelete}>Delete</button>
             <button className="btns" onClick={() => {
                 history.push(`/tips/edit/${tip.id}`)
-			        }}>Edit</button>
+			        }}>Edit</button> 
+                    <button className="btns" onClick={() => history.goBack()}>Return to Forum</button>
 			</section> : ""}
             <CommentForm tip={tip}/>
             <CommentList/>

@@ -49,7 +49,7 @@ export const LocationCard = ({ location }) => {
                     history.push(`/locations/edit/${location.id}`)
                         }}>Edit</button>
 			</section> 
-            : <>{favorites ? "" : <button className="btns" onClick={addNewFavLocation}>Favorite</button>}</>}
+            : <section className="buttons"><>{favorites ? "" : <button className="btns" onClick={addNewFavLocation}>Favorite</button>}</></section>}
             </div>
         </>
 )}
