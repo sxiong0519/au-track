@@ -31,7 +31,8 @@ export const MilestoneList = () => {
         if (searchTerms !== "") {
           const subset = sortedMilestones.filter((milestone) =>
             milestone.milestone.toLowerCase().includes(searchTerms) ||
-            milestone.description.toLowerCase().includes(searchTerms)
+            milestone.description.toLowerCase().includes(searchTerms) ||
+            milestone.date.includes(searchTerms)
           );
          
           setFiltered(subset);

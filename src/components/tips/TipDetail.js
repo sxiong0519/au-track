@@ -45,7 +45,7 @@ export const TipDetail = () => {
             <button className="btns" onClick={() => {
                 history.push(`/tips/edit/${tip.id}`)
 			        }}>Edit</button> 
-                    <button className="btns" onClick={() => history.goBack()}>Return to Forum</button>
+                    <button className="btns" onClick={() => history.push("/tips")}>Return to Forum</button>
 			</section> : ""}
             <CommentForm tip={tip}/>
             <CommentList/>
