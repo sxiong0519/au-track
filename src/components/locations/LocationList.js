@@ -18,7 +18,7 @@ export const LocationList = () => {
     useEffect(() => {
       if (searchTerms !== "") {
         // If the search field is not blank, display matching locations
-        const subset = locations.filter((location) =>
+        const subset = sortedLocations.filter((location) =>
           location.title.toLowerCase().includes(searchTerms)
         );
        
@@ -28,6 +28,12 @@ export const LocationList = () => {
         setFiltered(locations);
       }
     }, [searchTerms, locations]);
+
+    const sortedLocations = locations.sort((a, b) => {
+      return (
+        new Date(b.date) - new Date(a.date)
+      );
+    });
 
     return (
         <>

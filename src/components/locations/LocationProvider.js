@@ -26,7 +26,7 @@ export const LocationProvider = (props) => {
     }
 
     const getLocationById = (id) => {
-        return fetch(`http://localhost:8088/locations/${id}?_expand=parents`)
+        return fetch(`http://localhost:8088/locations/${id}?_expand=parent`)
         .then(res => res.json()) // note we don't set anything on state here. Why?
     }
 

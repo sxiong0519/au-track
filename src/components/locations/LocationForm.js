@@ -98,7 +98,8 @@ return (
                 }
             }>
                  {locationId ? "Update Location" : "Save Location"}
-            </button>{locationId ? <button className="btns" onClick={() => history.push("/locations")}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
+            </button>
+            {locationId ? <button className="btns" onClick={() => history.push("/locations")}>Cancel</button> :<button className="btns" onClick={() => history.goBack()}>Cancel</button>}
             </div>
         </form>
     )
