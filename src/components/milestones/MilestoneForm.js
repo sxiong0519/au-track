@@ -33,7 +33,6 @@ export const MilestoneForm = () => {
             milestone: milestone.milestone,
             date: milestone.date,
             description: milestone.description,
-            image: milestone.image,
             childId: parseInt(milestone.childId)
         })
         .then(() => history.push(`/milestones/list/${milestone.childId}`))
@@ -43,7 +42,6 @@ export const MilestoneForm = () => {
             milestone: milestone.milestone,
             date: milestone.date,
             description: milestone.description,
-            image: milestone.image,
             childId: parseInt(milestone.childId)
       }
       addMilestones(newMilestone)
@@ -79,19 +77,13 @@ return (
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
-                    <textarea type="text" id="description" required autoFocus className="form-control" placeholder="Enter a description" value={milestone.description} onChange={handleControlledInputChange} />
+                    <input type="text" id="description" required autoFocus className="form-control" placeholder="Enter a description" value={milestone.description} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="date">Date:</label>
                     <input type="date" id="date" required autoFocus className="form-control" placeholder="Enter a date" value={milestone.date} onChange={handleControlledInputChange} />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="image">Image:</label>
-                    <input type="text" id="image" required autoFocus className="form-control" placeholder="Enter an image" value={milestone.image} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>

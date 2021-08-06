@@ -56,6 +56,7 @@ export const ProviderList = () => {
             <div className="providersearches">
               <ChildProfilePic/>
               <ProviderSearch/>
+              <p/>
          <div className="newproviderbtn"><button className="btns" onClick={() => 
                 {history.push("/provider/create")}}>
                 Add Provider</button></div>

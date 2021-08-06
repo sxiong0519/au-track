@@ -31,7 +31,8 @@ export const MilestoneList = () => {
         if (searchTerms !== "") {
           const subset = sortedMilestones.filter((milestone) =>
             milestone.milestone.toLowerCase().includes(searchTerms) ||
-            milestone.description.toLowerCase().includes(searchTerms)
+            milestone.description.toLowerCase().includes(searchTerms) ||
+            milestone.date.includes(searchTerms)
           );
          
           setFiltered(subset);
@@ -55,6 +56,7 @@ export const MilestoneList = () => {
                 <div className="milestonessearches">
                     <ChildProfilePic/>
                     <MilestoneSearch/>
+                    <p/>
                     <div className="newmilestonebtn"><button className="btns" onClick={() => 
                         {history.push("/milestone/create")}}>
                         Add Milestone</button></div>

@@ -41,8 +41,10 @@ export const TipCard = ({ tip }) => {
             {tip.parentId === currentUser ? 
             <section className="buttons">
 			<button className="btns" onClick={tipDelete}>Delete</button> 
-            </section> : 
-            <>{favs ? "" : <button className="btns" onClick={addNewFavTip}>Favorite</button>}</>}
+            </section> : <section className="buttons">
+            <>{favs ? "" : <button className="btns" onClick={addNewFavTip}>Favorite</button>}</>
+            </section>
+            }
             </div>
         </>
 )}

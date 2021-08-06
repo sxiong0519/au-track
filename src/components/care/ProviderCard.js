@@ -5,8 +5,12 @@ import { ProviderContext } from "./ProviderProvider"
 
 
 export const ProviderCard = ({ provider }) => {
-    const { providerDelete } = useContext(ProviderContext)
+    const { deleteProvider } = useContext(ProviderContext)
     const history = useHistory()
+
+    const providerDelete = () => {
+        deleteProvider(provider.id)
+    }
 
 
     return (
@@ -17,7 +21,7 @@ export const ProviderCard = ({ provider }) => {
                     <li>Provider: {provider.name}</li>
                     <li>Specialty: {provider.specialty}</li>
                     <li>Care: {provider.description}</li>
-                    <li>Date: {new Date(provider.date).toLocaleDateString()}</li>
+                    <li>Date: {provider.date}</li>
                 </ul>
                 <center>
                 <div className="buttons">
