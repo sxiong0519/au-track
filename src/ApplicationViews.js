@@ -104,7 +104,7 @@ export const ApplicationViews = () => {
             </TipProvider>
             <LocationProvider>
             <FavLocationProvider>
-                <Route path="/locations/edit/:locationId(\d+)">
+                <Route exact path="/locations/edit/:locationId(\d+)">
                     <LocationForm/>
                 </Route>
                 <Route path="/locations/create">
