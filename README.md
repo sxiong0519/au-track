@@ -1,6 +1,6 @@
-#Au Track
+# Au Track
 
-###Built With 
+### Built With 
 ReactJS
 CSS
 HTML
@@ -10,20 +10,20 @@ A one-stop tracking web-based application utilizing ReactJS with full CRUD funct
 
 To get a local copy up and running follow these simple steps.
 
-##Installation
+## Installation
 *npm 
 `npm install`
 
-*Clone the repository 
+* Clone the repository 
 `git clone git@github.com:sxiong0519/au-track.git`
 
 **If you have a readied API**
 `json-server -p 8088 -w database.json`
 
-*Run the code
+* Run the code
 `npm start`
 
-##ERD
+## ERD
 
-##WireFrame
+## WireFrame
 <img src= "Images/ChildDetail.png" height="100" width="auto" />
