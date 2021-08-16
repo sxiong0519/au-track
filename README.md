@@ -13,17 +13,20 @@ To get a local copy up and running follow these simple steps.
 ## Installation 
 
 * npm 
-`npm install`
+
+    `npm install`
 
 * Clone the repository 
-`git clone git@github.com:sxiong0519/au-track.git`
+
+    `git clone git@github.com:sxiong0519/au-track.git`
 
 * If you have a readied API 
 
-`json-server -p 8088 -w database.json`
+    `json-server -p 8088 -w database.json`
 
 * Run the code
-`npm start`
+
+    `npm start`
 
 ## ERD
 <img src= "Images/ERD.png" height="100" width="auto" />
