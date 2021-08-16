@@ -27,7 +27,7 @@ import { TipForm } from "./components/tips/TipForm"
 import { TipList } from "./components/tips/TipList"
 import { TipProvider } from "./components/tips/TipProvider"
 import { Home } from "./Home"
-
+import "./components/tips/Tip.css"
 
 
 
@@ -80,10 +80,13 @@ export const ApplicationViews = () => {
             <ParentProvider>
             <TipProvider>
             <FavTipProvider>
+                
             <CommentProvider>
                 <Route path="/tips/detail/:tipId(\d+)">
                     <NavHome/>
+                    <div className="tips">
                     <TipDetail/>
+                    </div>
                 </Route>
                 </CommentProvider>
                 <Route path="/tips/edit/:tipId(\d+)">
