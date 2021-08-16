@@ -38,9 +38,17 @@
 .tip_detail{
     font-family: 'Pangolin', cursive;
     width: 45em;
-    margin-left: 30em;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
+.tips{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .tipForm {
     font-family: 'Pangolin', cursive;
 }
@@ -55,11 +63,14 @@
     justify-content: space-evenly;
     font-family: 'Pangolin', cursive;
     width: 45em;
-    margin-left: 30em;
 }
 
 .forumlink {
     color: #3b4e50;
     padding: 0em 1em .5em;
     font-family: 'Staatliches', cursive;
+}
+
+.tipdesc {
+    width: 45em;
 }

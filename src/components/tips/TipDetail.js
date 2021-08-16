@@ -31,14 +31,14 @@ export const TipDetail = () => {
     return (
         <>
         <div className="tip_detail">
-            <h2>{tip.title}</h2>
+            <div className="tipdesc"><h2>{tip.title}</h2>
             {tip.description}
-            <br/>
+            <p/>
             Posted by: {tip.parent?.name}
             <br/>
             {new Date(tip.date).toLocaleDateString()}
             <p/>
-            </div>
+            
             {tip.parentId === parseInt(localStorage.getItem("autrack_user")) ? 
             <section className="buttons tipbtns">
 			<button className="btns" onClick={tipDelete}>Delete</button>
@@ -47,8 +47,10 @@ export const TipDetail = () => {
 			        }}>Edit</button> 
                     <button className="btns" onClick={() => history.push("/tips")}>Return to Forum</button>
 			</section> : ""}
-            <CommentForm tip={tip}/>
-            <CommentList/>
+            </div>
+            <div><CommentForm tip={tip}/></div>
+            <div><CommentList/></div>
+            </div>
         </>
     )
 
