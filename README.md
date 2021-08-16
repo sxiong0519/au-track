@@ -10,8 +10,9 @@ A one-stop tracking web-based application utilizing ReactJS with full CRUD funct
 
 To get a local copy up and running follow these simple steps.
 
-## Installation
-*npm 
+## Installation 
+
+* npm 
 `npm install`
 
 * Clone the repository 
@@ -24,6 +25,11 @@ To get a local copy up and running follow these simple steps.
 `npm start`
 
 ## ERD
+<img src= "Images/ERD.png" height="100" width="auto" />
+
 
 ## WireFrame
+<img src= "Images/Homepage.png" height="100" width="auto" />
 <img src= "Images/ChildDetail.png" height="100" width="auto" />
+<img src= "Images/MileProv.png" height="100" width="auto" />
+<img src= "Images/ForLoc.png" height="100" width="auto" />
