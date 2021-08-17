@@ -5,6 +5,7 @@ import { ChildContext } from "./ChildProvider";
 
 
 
+
 export const ChildForm = () => {
   const { addChildren, getChildById, updateChild } = useContext(ChildContext)
   
@@ -57,16 +58,19 @@ export const ChildForm = () => {
         setIsLoading(false)
     }
 }, [])
+   
+console.log(process.env, "api")
 
 
     const uploadImage = async e => {
         const files = e.target.files
+        const cloudinaryapikey = process.env.REACT_APP_API; 
         const data = new FormData()
         data.append('file', files[0])
         data.append('upload_preset', 'autrack')
         setLoading(true)
 
-        const res = await fetch("https://api.cloudinary.com/v1_1/dzeqptua9/image/upload",
+        const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudinaryapikey}/image/upload`,
         {
             method:'PUT',
             body: data
@@ -87,13 +91,6 @@ return (
                     <input type="text" id="name" required autoFocus className="form-control" placeholder="Enter child's name" value={child.name} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
-            {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="image">Image:</label>
-                    <input type="text" id="image" required autoFocus className="form-control" placeholder="Upload an image" value={child.image} onChange={handleControlledInputChange} />
-                </div>
-            </fieldset> */}
-           
             <input type="file" placeholder="Upload an image" onChange={uploadImage}/> 
             <br/>
 
