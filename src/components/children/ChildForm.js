@@ -5,6 +5,7 @@ import { ChildContext } from "./ChildProvider";
 
 
 
+
 export const ChildForm = () => {
   const { addChildren, getChildById, updateChild } = useContext(ChildContext)
   
@@ -57,16 +58,19 @@ export const ChildForm = () => {
         setIsLoading(false)
     }
 }, [])
+   
+console.log(process.env, "api")
 
 
     const uploadImage = async e => {
         const files = e.target.files
+        const cloudinaryapikey = process.env.REACT_APP_API; 
         const data = new FormData()
         data.append('file', files[0])
         data.append('upload_preset', 'autrack')
         setLoading(true)
 
-        const res = await fetch("https://api.cloudinary.com/v1_1/${{secrets.CLOUDINARY_API_KEY}}/image/upload",
+        const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudinaryapikey}/image/upload`,
         {
             method:'PUT',
             body: data
@@ -77,8 +81,6 @@ export const ChildForm = () => {
         setImage(file.secure_url)
         setLoading(false)
     }
-
-    console.log(${{secrets.CLOUDINARY_API_KEY}})
 
 return (
         <form className="childForm">
