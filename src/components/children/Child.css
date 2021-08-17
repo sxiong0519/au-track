@@ -53,3 +53,7 @@
     display:flex;
     justify-content: space-around;
 }
+
+.child_header{
+    font-family: 'Pangolin', cursive;
+}
