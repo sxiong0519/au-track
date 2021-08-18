@@ -1,4 +1,4 @@
-<img src="src/components/nav/navlogo.png" height="300" width="auto" />
+<center><img src="src/components/nav/navlogo.png" height="300" width="auto" /></center>
 
 # Au Track
 
@@ -41,12 +41,19 @@ To get a local copy up and running follow these simple steps.
     
     `
     { 
+
     "parents": [],
+
     "children": [],
+
     "providers": [],
+
     "milestones": [],
+
     "locations": [],
+
     "favoriteTips": []
+
     }
     `
 
