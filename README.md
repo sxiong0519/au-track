@@ -1,4 +1,4 @@
-<center><img src="src/components/nav/navlogo.png" height="300" width="auto" /></center>
+<div style="text-align:center"><img src="src/components/nav/navlogo.png" height="300" width="auto" /></div>
 
 # Au Track
 
@@ -39,23 +39,14 @@ To get a local copy up and running follow these simple steps.
 
 * Create a JSON Database file and copy the below into the file
     
-    `
-    { 
-
-    "parents": [],
-
-    "children": [],
-
-    "providers": [],
-
-    "milestones": [],
-
-    "locations": [],
-
-    "favoriteTips": []
-
-    }
-    `
+    `{ 
+    "parents": [], <br/>
+    "children": [], <br/>
+    "providers": [], <br/>
+    "milestones": [], <br/>
+    "locations": [], <br/>
+    "favoriteTips": [] <br/>
+    }`
 
 * Serve the database api
  
