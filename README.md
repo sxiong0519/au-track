@@ -9,7 +9,7 @@ A one-stop tracking web-based application utilizing ReactJS with full CRUD funct
 * Adobe Photoshop
 * Cloudinary 
 
-##  Getting Started
+## Getting Started
 
 To get a local copy up and running follow these simple steps.
 
@@ -44,12 +44,12 @@ To get a local copy up and running follow these simple steps.
 
 ## Design and Development
 
-# DbDiagram.io - Entity Relationship Diagram
+### DbDiagram.io - Entity Relationship Diagram
 
 <img src= "Images/ERD.png" height="100" width="auto" />
 
 
-# WireFrame
+### WireFrame
 <img src= "Images/Homepage.png" height="150" width="auto" />
 <img src= "Images/ChildDetail.png" height="150" width="auto" />
 <img src= "Images/MileProv.png" height="150" width="auto" />
