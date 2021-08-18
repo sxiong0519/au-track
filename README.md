@@ -32,7 +32,7 @@ To get a local copy up and running follow these simple steps.
 
 * Replace Cloudinary API Key in the **ChildForm.js** file, line 73 `${cloudinaryapikey}` with your **cloud name**
 
-<img src= "Images/CloudName.gif" height="10em" width="auto" />
+<img src= "Images/CloudName.gif" height="150" width="auto" />
 <img src= "Images/Line73example.gif" height="100" width="auto" />
 
 
@@ -40,7 +40,7 @@ To get a local copy up and running follow these simple steps.
 
     `npm start`
 
-<img src= "Images/HomeExample.gif" height="50em" width="auto" />
+<img src= "Images/HomeExample.gif" height="500" width="auto" />
 
 ## Design and Development
 
@@ -50,7 +50,7 @@ To get a local copy up and running follow these simple steps.
 
 
 # WireFrame
-<img src= "Images/Homepage.png" height="10em" width="auto" />
-<img src= "Images/ChildDetail.png" height="10em" width="auto" />
-<img src= "Images/MileProv.png" height="10em" width="auto" />
-<img src= "Images/ForLoc.png" height="10em" width="auto" />
+<img src= "Images/Homepage.png" height="150" width="auto" />
+<img src= "Images/ChildDetail.png" height="150" width="auto" />
+<img src= "Images/MileProv.png" height="150" width="auto" />
+<img src= "Images/ForLoc.png" height="150" width="auto" />
