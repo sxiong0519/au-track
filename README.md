@@ -40,6 +40,8 @@ To get a local copy up and running follow these simple steps.
 
     `npm start`
 
+<img src= "Images/HomeExample.gif" height="100" width="auto" />
+
 ## Design and Development
 
 # DbDiagram.io - Entity Relationship Diagram
